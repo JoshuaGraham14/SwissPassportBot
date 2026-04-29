@@ -1,0 +1,10 @@
+services:
+  swiss-passport-bot:
+    build: .
+    container_name: swiss-passport-bot
+    env_file:
+      - .env
+    restart: unless-stopped
+    volumes:
+      - ./.state:/app/.state
+      - ./logs:/app/logs
